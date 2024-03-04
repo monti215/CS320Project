@@ -30,8 +30,6 @@ public class Contact {
         this.phone = phone;
         this.address = address;
     }
-    
-
 
     public String getContactId() {
         return contactId;
