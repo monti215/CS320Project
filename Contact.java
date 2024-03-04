@@ -1,69 +1,56 @@
 package info;
 
 public class Contact {
+    private String contactId;
+    private String firstName;
+    private String lastName;
+    private String phone;
+    private String address;
 
-    String contactID;
-    String firstName;
-    String lastName;
-    String phoneNumber;
-    String address;
-  
-    public Contact(String contactID, String firstName, String lastName, String phoneNumber, String address) {
-        super();
-        this.contactID = contactID;
+    public Contact(String contactId, String firstName, String lastName, String phone, String address) {
+		if (contactId == null || contactId.length() > 10) {
+			throw new IllegalArgumentException("Invalid Contact ID");
+		}
+		if (firstName == null || firstName.length() > 10) {
+			throw new IllegalArgumentException("Invalid First Name");
+		}
+		if (lastName == null || lastName.length() > 10) {
+			throw new IllegalArgumentException("Invalid Last Name");
+		}
+		if (phone == null || phone.length() > 10) {
+			throw new IllegalArgumentException("Invalid Phone Number");
+		}
+		if (address == null || address.length() > 30) {
+			throw new IllegalArgumentException("Invalid Address");
+		}
+		
+    	this.contactId = contactId;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.phoneNumber = phoneNumber;
+        this.phone = phone;
         this.address = address;
     }
-  
-    public String getContactID() {
-        return contactID;
-    }
+    
 
-    public void setContactID(String contactID) {
-        this.contactID = contactID;
+
+    public String getContactId() {
+        return contactId;
     }
 
     public String getFirstName() {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
     public String getLastName() {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public String getPhone() {
+        return phone;
     }
 
     public String getAddress() {
         return address;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    @Override
-    public String toString() {
-        return "Contact [contactID=" + contactID + ", firstName=" + firstName + ", lastName=" + lastName
-               + ", phoneNumber=" + phoneNumber + ", address=" + address + "]";
-    }
-  
 }
-		
-
-
